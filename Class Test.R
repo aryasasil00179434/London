@@ -48,7 +48,6 @@ london_crime$Region[london_crime$Borough=="Bexley"]<-"East"
 london_crime$Region[london_crime$Borough=="Brent"]<-"West"
 london_crime$Region[london_crime$Borough=="Bromley"]<-"South" 
 london_crime$Region[london_crime$Borough=="Camden"]<-"North"
-
 london_crime$Region[london_crime$Borough=="Croydon"]<-"South"
 london_crime$Region[london_crime$Borough=="Ealing"]<-"West"
 london_crime$Region[london_crime$Borough=="Enfield"]<-"North "
@@ -80,8 +79,28 @@ View(london_crime)
 sum(is.na(london_crime$Region))
 
 
-
 #7
+region_info<-table(london_crime$Region)
+windows(20,10)
+lbls3 <- paste(names(region_info), "\n", region_info, sep = "")
+pie(region_info, labels = lbls3,
+    main = "Crimes With Regions")
+windows(20,10)
+barplot(region_info, 
+        main = "Crime Distribution by Borough", 
+        xlab = "Borough", 
+        ylab = "Number of Crimes")
+# Central region had the highest number of crimes from the Chart
+# South region had the Lowest number of crimes from the Chart
+
+#8
+
+#9
+
+#10
+# Save modified  data frame 
+write.csv(london_crime, " london-crimemodified.csv", row.names = FALSE)
+
 
 
 
