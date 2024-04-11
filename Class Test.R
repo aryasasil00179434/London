@@ -75,8 +75,7 @@ london_crime$Region[london_crime$Borough=="Tower Hamlets"]<-"Central"
 london_crime$Region[london_crime$Borough=="Waltham Forest"]<-"Central"
 london_crime$Region[london_crime$Borough=="Wandsworth"]<-"East " 
 london_crime$Region[london_crime$Borough=="Westminster"]<-"Central"
-london_crime$Region[london_crime$Borough==""]<-"Central"
-
+london_crime$Region[london_crime$Borough=="City of London"]<-"Central"
 View(london_crime)
 sum(is.na(london_crime$Region))
 
